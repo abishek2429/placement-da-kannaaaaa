@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,13 +7,15 @@
 /* ── Base ───────────────────────────────────────────────────────────────── */
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-slate-950 text-slate-100;
+    background-image: radial-gradient(circle at top right, rgba(217, 70, 239, 0.05), transparent 40%),
+                      radial-gradient(circle at bottom left, rgba(162, 28, 175, 0.05), transparent 40%);
   }
 
   ::selection {
@@ -28,11 +30,11 @@
 /* ── Components ─────────────────────────────────────────────────────────── */
 @layer components {
   .card {
-    @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/50 rounded-2xl p-5 transition-all duration-300;
+    @apply bg-slate-900/40 backdrop-blur-xl border border-slate-700/30 rounded-2xl p-5 transition-all duration-500 ease-out;
   }
 
   .card-hover {
-    @apply card hover:border-brand-500/50 hover:bg-slate-800/80 hover:shadow-[0_0_30px_rgba(99,102,241,0.1)] hover:-translate-y-1;
+    @apply card hover:border-brand-500/50 hover:bg-slate-800/60 hover:shadow-[0_8px_30px_rgba(217,70,239,0.15)] hover:-translate-y-1.5;
   }
 
   .badge {
@@ -52,11 +54,11 @@
   }
 
   .btn-primary {
-    @apply btn bg-gradient-to-r from-brand-600 to-brand-500 text-white hover:from-brand-500 hover:to-brand-400 focus:ring-brand-500 shadow-lg shadow-brand-500/25 border border-brand-400/20;
+    @apply btn bg-gradient-to-r from-brand-600 to-brand-400 text-white hover:from-brand-500 hover:to-brand-300 focus:ring-brand-500 shadow-lg shadow-brand-500/30 border border-brand-300/30;
   }
 
   .btn-ghost {
-    @apply btn bg-transparent text-slate-300 hover:bg-slate-800 hover:text-white focus:ring-slate-600;
+    @apply btn bg-transparent text-slate-300 hover:bg-slate-800/80 hover:text-white focus:ring-slate-600;
   }
 
   .stat-card {
@@ -76,7 +78,7 @@
   }
 
   .table-container {
-    @apply w-full overflow-x-auto rounded-2xl border border-slate-800/60 bg-slate-900/30 backdrop-blur-sm;
+    @apply w-full overflow-x-auto rounded-2xl border border-slate-700/40 bg-slate-900/40 backdrop-blur-md;
   }
   .data-table {
     @apply w-full text-sm text-left;

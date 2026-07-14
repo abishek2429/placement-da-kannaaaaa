@@ -57,18 +57,18 @@ Replace `25mx301` with YOUR roll number. Open `profile.md` in your code editor a
 
 **Linux / macOS (Bash/Zsh)**
 ```bash
-mkdir -p activities/day02/25mx301
-cp activities/day02/_template/README.md    activities/day02/25mx301/README.md
-cp activities/day02/_template/reflection.md activities/day02/25mx301/reflection.md
-cp activities/day02/_template/prompts.md   activities/day02/25mx301/prompts.md
+mkdir -p activities/2026-07-11/25mx301
+cp activities/2026-07-11/_template/README.md    activities/2026-07-11/25mx301/README.md
+cp activities/2026-07-11/_template/reflection.md activities/2026-07-11/25mx301/reflection.md
+cp activities/2026-07-11/_template/prompts.md   activities/2026-07-11/25mx301/prompts.md
 ```
 
 **Windows (PowerShell)**
 ```powershell
-New-Item -ItemType Directory -Force -Path activities\day02\25mx301
-Copy-Item activities\day02\_template\README.md -Destination activities\day02\25mx301\README.md
-Copy-Item activities\day02\_template\reflection.md -Destination activities\day02\25mx301\reflection.md
-Copy-Item activities\day02\_template\prompts.md -Destination activities\day02\25mx301\prompts.md
+New-Item -ItemType Directory -Force -Path activities\2026-07-11\25mx301
+Copy-Item activities\2026-07-11\_template\README.md -Destination activities\2026-07-11\25mx301\README.md
+Copy-Item activities\2026-07-11\_template\reflection.md -Destination activities\2026-07-11\25mx301\reflection.md
+Copy-Item activities\2026-07-11\_template\prompts.md -Destination activities\2026-07-11\25mx301\prompts.md
 ```
 
 Then open each file and fill in the content.
@@ -79,10 +79,10 @@ These commands work across Linux, macOS, and Windows.
 
 ```bash
 git add .
-git commit -m "day02: 25mx301 submission"
+git commit -m "2026-07-11: 25mx301 submission"
 ```
 
-The commit message format should be `dayXX: rollnumber submission`. Example: `day02: 25mx301 submission`.
+The commit message format should be `dayXX: rollnumber submission`. Example: `2026-07-11: 25mx301 submission`.
 
 ### 5. Push to your fork
 
@@ -99,7 +99,7 @@ git push origin main
    - **base repository:** `brittytino/placement-readiness`
    - **base:** `main`
    - **compare:** `main`
-5. Give your PR a title like `day02: 25mx301 submission` and click **"Create pull request"**.
+5. Give your PR a title like `2026-07-11: 25mx301 submission` and click **"Create pull request"**.
 
 Done! The automatic check will run immediately. If it passes (green tick), your PR is ready for the placement rep to merge. If it fails (red cross), click on "Details" to see what to fix.
 

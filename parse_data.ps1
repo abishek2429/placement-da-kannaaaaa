@@ -65,10 +65,10 @@ foreach ($block in $teamBlocks) {
 $rosterJson = $students | ConvertTo-Json -Depth 3 -Compress
 # Uncompressing it nicely using PowerShell trick or just outputting raw. We can format it manually for neatness:
 $rosterJsonFormatted = $students | ConvertTo-Json -Depth 3
-Set-Content -Path "d:\p\engineering-readiness\students\roster.json" -Value $rosterJsonFormatted -Encoding UTF8
+Set-Content -Path "d:\p\placement-readiness\students\roster.json" -Value $rosterJsonFormatted -Encoding UTF8
 
 $teamsJsonFormatted = $teamsData | ConvertTo-Json -Depth 3
-Set-Content -Path "d:\p\engineering-readiness\teams.json" -Value $teamsJsonFormatted -Encoding UTF8
+Set-Content -Path "d:\p\placement-readiness\teams.json" -Value $teamsJsonFormatted -Encoding UTF8
 
 # Build attendance and scoreboard
 $attendance = @{}
@@ -82,10 +82,10 @@ foreach ($key in $students.Keys) {
 }
 
 $attJson = $attendance | ConvertTo-Json -Depth 3
-Set-Content -Path "d:\p\engineering-readiness\attendance.json" -Value $attJson -Encoding UTF8
+Set-Content -Path "d:\p\placement-readiness\attendance.json" -Value $attJson -Encoding UTF8
 
 $scoreJson = $scoreboard | ConvertTo-Json -Depth 3
-Set-Content -Path "d:\p\engineering-readiness\scoreboard.json" -Value $scoreJson -Encoding UTF8
+Set-Content -Path "d:\p\placement-readiness\scoreboard.json" -Value $scoreJson -Encoding UTF8
 
 Write-Host "Processed $($students.Count) students."
 Write-Host "Done formatting data."

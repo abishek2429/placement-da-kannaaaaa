@@ -64,7 +64,7 @@ Reuses your existing "Solve First, Ask Smart" format — this is the one you alr
 **Task:**
 1. Phase 1 (no AI, 25 min): solve a short coding problem individually, write down where they got stuck.
 2. Phase 2 (AI-assisted, 25 min): use Claude with the structured prompting protocol to improve/complete it.
-3. Submit `activities/day02/25mx301/README.md`, `reflection.md`, `prompts.md`.
+3. Submit `activities/2026-07-11/25mx301/README.md`, `reflection.md`, `prompts.md`.
 
 **Reflection template fields:** Problem · My Initial Thinking · Where I Got Stuck · Claude Prompts Used · What AI Taught Me · What I'd Do Differently.
 
@@ -81,7 +81,7 @@ Reuses your existing "Solve First, Ask Smart" format — this is the one you alr
 **Task:** Give each team the same deliberately-broken small codebase (a script with 3–4 planted bugs). Team works together, each member still submits their own PR documenting which bug(s) they found/fixed and how.
 
 **Conducting steps:**
-- One shared bug-file per team, distributed as a GitHub Gist link or in `activities/day03/starter/`.
+- One shared bug-file per team, distributed as a GitHub Gist link or in `activities/2026-07-12/starter/`.
 - Team members can split bugs but must each write their own `reflection.md` — this keeps individual accountability inside a team activity.
 - Track "Helping Others" bonus points manually for students who visibly helped teammates (you or team volunteers report these at 5:05).
 

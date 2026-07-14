@@ -76,7 +76,7 @@ const existingTeams = readJSON('teams.json') ?? {};
 // ── Discover which activities/ folders exist ─────────────────────────────────
 
 const activitiesDir = resolve(ROOT, 'activities');
-const days = listDirs(activitiesDir).sort(); // e.g. ['day01', 'day02', ...]
+const days = listDirs(activitiesDir).sort(); // e.g. ['2026-07-10', '2026-07-11', ...]
 
 // Map: day → Set of roll numbers who submitted
 const submittedByDay = {};
@@ -128,7 +128,7 @@ for (const roll of Object.keys(roster)) {
     // quality / reflection / prompting: default to 5 if newly submitted and not yet graded
     const quality     = submitted > 0 ? (prev.quality     ?? 5) : 0;
     const reflection  = submitted > 0 ? (prev.reflection  ?? 5) : 0;
-    const prompting   = day === 'day01' ? 0 : (submitted > 0 ? (prev.prompting ?? 5) : 0);
+    const prompting   = day === '2026-07-10' ? 0 : (submitted > 0 ? (prev.prompting ?? 5) : 0);
 
     byDay[day] = { submitted, quality, reflection, prompting, documentation };
   }

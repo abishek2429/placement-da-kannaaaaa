@@ -176,8 +176,7 @@ export function buildActivityDays(
       }
     }
 
-    const num = parseInt(id.replace('day', ''), 10)
-    const label = `Day ${num}`
+    const label = new Date(id).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 
     return {
       id,

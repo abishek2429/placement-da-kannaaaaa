@@ -15,7 +15,7 @@ export interface DayScore {
   submitted: number      // 10 if folder exists, else 0
   quality: number        // 0–10, set by owner
   reflection: number     // 0–10, set by owner
-  prompting: number      // 0–10, set by owner (0 for day01)
+  prompting: number      // 0–10, set by owner (0 for 2026-07-10)
   documentation: number  // 0–5, heuristic
 }
 
@@ -28,7 +28,7 @@ export interface ManualAdjustment {
 
 export interface StudentScore {
   total: number
-  byDay: Record<string, DayScore>   // key = "day01", "day02", ...
+  byDay: Record<string, DayScore>   // key = "2026-07-10", "2026-07-11", ...
   manualAdjustments: ManualAdjustment | null
 }
 
@@ -38,7 +38,7 @@ export type Scoreboard = Record<string, StudentScore>
 
 export type AttendanceStatus = 'present' | 'absent' | 'manual-present'
 
-export type StudentAttendance = Record<string, AttendanceStatus>  // key = "day01"
+export type StudentAttendance = Record<string, AttendanceStatus>  // key = "2026-07-10"
 
 export type Attendance = Record<string, StudentAttendance>
 
@@ -81,7 +81,7 @@ export interface TeamSummary {
 }
 
 export interface ActivityDay {
-  id: string           // "day01"
+  id: string           // "2026-07-10"
   label: string        // "Day 1"
   submissionCount: number
   totalStudents: number

@@ -47,7 +47,7 @@ Edit `scoreboard.json` and change the value for that student/day:
 ```json
 "25mx301": {
   "byDay": {
-    "day02": {
+    "2026-07-11": {
       "submitted": 10,
       "quality": 9,
       "reflection": 8,
@@ -61,7 +61,7 @@ Edit `scoreboard.json` and change the value for that student/day:
 Push to `main`:
 ```bash
 git add scoreboard.json
-git commit -m "chore: grade day02 reflections [skip ci]"
+git commit -m "chore: grade 2026-07-11 reflections [skip ci]"
 git push origin main
 ```
 
@@ -90,7 +90,7 @@ Edit `attendance.json`:
 
 ```json
 "25mx305": {
-  "day03": "manual-present"
+  "2026-07-12": "manual-present"
 }
 ```
 
@@ -135,7 +135,7 @@ git push -u origin main
 
 ### 5. Test the end-to-end flow
 1. Create a test fork under a different GitHub account
-2. Add a file to `activities/day01/25mx301/README.md` in the fork
+2. Add a file to `activities/2026-07-10/25mx301/README.md` in the fork
 3. Open a PR back to `brittytino/placement-readiness`
 4. Confirm the validate-pr Action runs and shows a green tick
 5. Merge the PR

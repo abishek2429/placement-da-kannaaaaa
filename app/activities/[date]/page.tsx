@@ -7,22 +7,22 @@ import {
 } from '@/lib/data'
 
 interface Props {
-  params: Promise<{ day: string }>
+  params: Promise<{ date: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { day } = await params
-  const num = parseInt(day.replace('day', ''), 10)
+  const { date } = await params
+  const label = new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
   return {
-    title: `Day ${num} Activity`,
-    description: `Submission details for Day ${num} of the Engineering Readiness programme.`,
+    title: `${label} Activity`,
+    description: `Submission details for ${label} of the Placement Readiness programme.`,
   }
 }
 
 export const revalidate = 60
 
 const DAY_THEMES: Record<string, { title: string; desc: string; tasks: string[] }> = {
-  day01: {
+  '2026-07-10': {
     title: 'Foundation Day: Claim Your Folder',
     desc: 'The goal of this day is purely operational — every student experiences the full Git loop once.',
     tasks: [
@@ -32,7 +32,7 @@ const DAY_THEMES: Record<string, { title: string; desc: string; tasks: string[] 
       'Commit → push → open PR to main',
     ],
   },
-  day02: {
+  '2026-07-11': {
     title: 'Solve First, Ask Smart',
     desc: 'Two-phase individual activity: solve without AI first, then with structured prompting.',
     tasks: [
@@ -41,7 +41,7 @@ const DAY_THEMES: Record<string, { title: string; desc: string; tasks: string[] 
       'Submit README.md, reflection.md, and prompts.md',
     ],
   },
-  day03: {
+  '2026-07-12': {
     title: 'Debug Battle',
     desc: 'Team-based activity: debug a deliberately-broken codebase. Individual PRs still required.',
     tasks: [
@@ -50,7 +50,7 @@ const DAY_THEMES: Record<string, { title: string; desc: string; tasks: string[] 
       'Each member submits their own README.md, reflection.md, and prompts.md documenting their specific findings',
     ],
   },
-  day04: {
+  '2026-07-13': {
     title: 'Mini Build: Reverse-Engineer a Feature',
     desc: 'Team-based design thinking exercise — produce an architecture diagram and write-up.',
     tasks: [
@@ -60,7 +60,7 @@ const DAY_THEMES: Record<string, { title: string; desc: string; tasks: string[] 
       'Each member submits their own README.md, reflection.md, prompts.md',
     ],
   },
-  day05: {
+  '2026-07-14': {
     title: 'Demo Day + Leaderboard Reveal',
     desc: 'Teams present their best work; final PRs merged live; weekly leaderboard revealed.',
     tasks: [
@@ -72,30 +72,30 @@ const DAY_THEMES: Record<string, { title: string; desc: string; tasks: string[] 
 }
 
 export default async function ActivityDetailPage({ params }: Props) {
-  const { day } = await params
+  const { date } = await params
   const { roster, attendance } = await getAllData()
   const activityDays = buildActivityDays(roster, attendance)
 
-  const activityDay = activityDays.find(d => d.id === day)
+  const activityDay = activityDays.find(d => d.id === date)
   if (!activityDay) notFound()
 
-  const theme = DAY_THEMES[day]
-  const dayNum = parseInt(day.replace('day', ''), 10)
+  const theme = DAY_THEMES[date]
+  const label = new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 
   return (
     <div className="space-y-8 animate-fade-in">
       {/* Breadcrumb */}
-      <div className="text-sm text-gray-500">
-        <Link href="/activities" className="hover:text-gray-300 transition-colors">Activities</Link>
+      <div className="text-sm text-slate-500">
+        <Link href="/activities" className="hover:text-slate-300 transition-colors">Activities</Link>
         <span className="mx-2">›</span>
-        <span className="text-gray-300">Day {dayNum}</span>
+        <span className="text-slate-300">{label}</span>
       </div>
 
       {/* Header */}
       <div>
         <div className="flex items-center gap-3 mb-2">
           <span className="px-3 py-1 bg-brand-600/15 border border-brand-500/25 rounded-lg text-brand-400 text-sm font-bold">
-            Day {dayNum}
+            {label}
           </span>
           <span className={`badge ${
             activityDay.submissionRate >= 80
@@ -108,10 +108,10 @@ export default async function ActivityDetailPage({ params }: Props) {
           </span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold text-white">
-          {theme?.title ?? `Day ${dayNum}`}
+          {theme?.title ?? label}
         </h1>
         {theme?.desc && (
-          <p className="text-gray-400 mt-2 max-w-2xl">{theme.desc}</p>
+          <p className="text-slate-400 mt-2 max-w-2xl">{theme.desc}</p>
         )}
       </div>
 
@@ -183,7 +183,7 @@ export default async function ActivityDetailPage({ params }: Props) {
                 {activityDay.submitters.map(roll => (
                   <Link
                     key={roll}
-                    href={`/students/${roll}`}
+                    href={`/activities/${date}/${roll}`}
                     className="inline-flex flex-col items-start px-2 py-1.5 rounded bg-brand-500/10 border border-brand-500/20
                                text-brand-400 text-xs hover:bg-brand-500/20 transition-colors group"
                   >

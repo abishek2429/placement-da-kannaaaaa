@@ -15,8 +15,8 @@ const nextConfig = {
   },
   // Environment variables exposed to the browser
   env: {
-    NEXT_PUBLIC_GITHUB_OWNER: process.env.NEXT_PUBLIC_GITHUB_OWNER ?? 'psgmx',
-    NEXT_PUBLIC_GITHUB_REPO:  process.env.NEXT_PUBLIC_GITHUB_REPO  ?? 'engineering-readiness',
+    NEXT_PUBLIC_GITHUB_OWNER: process.env.NEXT_PUBLIC_GITHUB_OWNER ?? 'brittytino',
+    NEXT_PUBLIC_GITHUB_REPO:  process.env.NEXT_PUBLIC_GITHUB_REPO  ?? 'placement-readiness',
   },
   outputFileTracingIncludes: {
     '/**/*': ['./*.json', './students/**/*', './activities/**/*'],

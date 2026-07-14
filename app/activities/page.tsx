@@ -17,11 +17,11 @@ export default async function ActivitiesPage() {
   const activityDays = buildActivityDays(roster, attendance)
 
   const DAY_THEMES: Record<string, { title: string; desc: string }> = {
-    day01: { title: 'Foundation Day',          desc: 'Claim your folder — Git, forks, and first PRs.' },
-    day02: { title: 'Solve First, Ask Smart',  desc: 'No-AI phase → AI-assisted phase → structured reflection.' },
-    day03: { title: 'Debug Battle',            desc: 'Team-based: debug a planted-bug codebase together.' },
-    day04: { title: 'Mini Build',              desc: 'Reverse-engineer a feature, produce architecture diagram.' },
-    day05: { title: 'Demo Day',                desc: 'Team presentations, live leaderboard reveal, weekly report.' },
+    '2026-07-10': { title: 'Foundation Day',          desc: 'Claim your folder — Git, forks, and first PRs.' },
+    '2026-07-11': { title: 'Solve First, Ask Smart',  desc: 'No-AI phase → AI-assisted phase → structured reflection.' },
+    '2026-07-12': { title: 'Debug Battle',            desc: 'Team-based: debug a planted-bug codebase together.' },
+    '2026-07-13': { title: 'Mini Build',              desc: 'Reverse-engineer a feature, produce architecture diagram.' },
+    '2026-07-14': { title: 'Demo Day',                desc: 'Team presentations, live leaderboard reveal, weekly report.' },
   }
 
   return (
@@ -50,13 +50,15 @@ export default async function ActivitiesPage() {
             return (
               <Link key={day.id} href={`/activities/${day.id}`}>
                 <div className="card-hover flex flex-col sm:flex-row sm:items-center gap-4">
-                  {/* Day badge */}
+                  {/* Date badge */}
                   <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500/20 to-purple-500/20 border border-brand-500/30 flex items-center justify-center text-center backdrop-blur-sm shadow-inner shadow-brand-500/10">
                     <div>
                       <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-purple-300 leading-none">
-                        {parseInt(day.id.replace('day', ''), 10)}
+                        {new Date(day.id).getDate()}
                       </div>
-                      <div className="text-[10px] font-bold text-brand-400 mt-1 uppercase tracking-widest">DAY</div>
+                      <div className="text-[10px] font-bold text-brand-400 mt-1 uppercase tracking-widest">
+                        {new Date(day.id).toLocaleString('default', { month: 'short' })}
+                      </div>
                     </div>
                   </div>
 

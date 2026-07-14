@@ -43,7 +43,7 @@ const totalRoster = Object.keys(roster).length;
 const today = new Date().toISOString().split('T')[0];
 
 // Submissions today = students where any day's attendance entry has today's date
-// Since attendance is stored as day01/day02 etc., we track "most recent day that had submissions"
+// Since attendance is stored as 2026-07-10/2026-07-11 etc., we track "most recent day that had submissions"
 // Practical approach: count students who have at least one 'present' in attendance
 const totalPresent = Object.values(attendance).filter(
   a => Object.values(a).some(v => v === 'present' || v === 'manual-present')

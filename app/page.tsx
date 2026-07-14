@@ -49,17 +49,19 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-8 animate-fade-in">
       {/* ── Page header ─────────────────────────────────────────────────────── */}
-      <div>
-        <div className="flex items-center gap-2 text-xs text-gray-500 mb-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse-slow" />
-          Auto-refreshes every 60 seconds
+      <div className="animate-slide-up">
+        <div className="flex items-center gap-2 text-xs text-brand-400 mb-3 font-semibold uppercase tracking-wider">
+          <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
+          Live Dashboard
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-          Placement Readiness{' '}
-          <span className="text-gradient">Dashboard</span>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          Placement Readiness <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-purple-400">
+            Programme 25MX
+          </span>
         </h1>
-        <p className="text-gray-400 mt-1">
-          25MX Cohort · {daysRun.length} day{daysRun.length !== 1 ? 's' : ''} run so far
+        <p className="text-slate-400 mt-3 text-lg max-w-2xl">
+          Tracking daily submissions, cohort performance, and team standings. {daysRun.length} day{daysRun.length !== 1 ? 's' : ''} run so far.
         </p>
       </div>
 
@@ -120,25 +122,25 @@ export default async function DashboardPage() {
         </div>
 
         {/* Team standings — 1/3 */}
-        <div className="space-y-3">
+        <div className="space-y-4 animate-slide-up" style={{ animationDelay: '150ms' }}>
           <div className="flex items-center justify-between">
-            <h2 className="font-bold text-white">Team Standings</h2>
-            <Link href="/teams" className="text-xs text-brand-400 hover:text-brand-300 transition-colors">
+            <h2 className="font-bold text-lg text-white">Team Standings</h2>
+            <Link href="/teams" className="text-xs font-medium text-brand-400 hover:text-brand-300 transition-colors">
               All teams →
             </Link>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-3">
             {teamSummaries.slice(0, 5).map((team, i) => (
               <Link key={team.id} href={`/teams/${team.id}`}>
-                <div className="card-hover flex items-center gap-3">
-                  <span className="text-sm flex-shrink-0">
-                    {i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `#${i + 1}`}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-sm font-medium text-white">{team.name}</div>
-                    <div className="text-xs text-gray-500">Lab {team.lab}</div>
+                <div className="card-hover flex items-center gap-4">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-800/80 text-sm flex-shrink-0 border border-slate-700/50">
+                    {i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : <span className="text-slate-400 font-semibold">{i + 1}</span>}
                   </div>
-                  <div className="font-bold text-white tabular-nums">{team.averageScore}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-sm font-semibold text-white">{team.name}</div>
+                    <div className="text-xs text-slate-400">Lab {team.lab}</div>
+                  </div>
+                  <div className="font-bold text-brand-300 tabular-nums text-lg">{team.averageScore}</div>
                 </div>
               </Link>
             ))}
@@ -147,10 +149,10 @@ export default async function DashboardPage() {
       </div>
 
       {/* ── Contribution heatmap ────────────────────────────────────────────── */}
-      <div className="card">
+      <div className="card animate-slide-up" style={{ animationDelay: '200ms' }}>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-bold text-white">Cohort Submission Heatmap</h2>
-          <span className="text-xs text-gray-500">Colour = % submitted that day</span>
+          <h2 className="font-bold text-lg text-white">Cohort Submission Heatmap</h2>
+          <span className="text-xs font-medium text-slate-500">Colour = % submitted that day</span>
         </div>
         <AggregatedHeatmap
           attendance={attendance}
@@ -160,10 +162,10 @@ export default async function DashboardPage() {
       </div>
 
       {/* ── Top 5 leaderboard preview ────────────────────────────────────────── */}
-      <div className="space-y-3">
+      <div className="space-y-4 animate-slide-up" style={{ animationDelay: '250ms' }}>
         <div className="flex items-center justify-between">
-          <h2 className="font-bold text-white">Top 5 Students</h2>
-          <Link href="/leaderboard" className="text-xs text-brand-400 hover:text-brand-300 transition-colors">
+          <h2 className="font-bold text-lg text-white">Top 5 Students</h2>
+          <Link href="/leaderboard" className="text-xs font-medium text-brand-400 hover:text-brand-300 transition-colors">
             Full leaderboard →
           </Link>
         </div>

@@ -31,28 +31,33 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="min-h-screen bg-gray-950 text-gray-100 antialiased">
-        <Navbar githubOwner={OWNER} githubRepo={REPO} />
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {children}
-        </main>
-        <footer className="mt-16 border-t border-gray-800 py-8 text-center text-xs text-gray-600">
-          <p>
-            MCA Department, PSG College of Technology · 25MX Cohort
-          </p>
+      <body className="min-h-screen antialiased overflow-x-hidden relative">
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-brand-500/10 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-purple-500/10 blur-[120px] pointer-events-none" />
+        
+        <div className="relative z-10">
+          <Navbar githubOwner={OWNER} githubRepo={REPO} />
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+            {children}
+          </main>
+          <footer className="mt-16 border-t border-slate-800/60 py-8 text-center text-xs text-slate-500 backdrop-blur-sm">
+            <p className="font-medium text-slate-400">
+              MCA Department, PSG College of Technology · 25MX Cohort
+            </p>
           <p className="mt-1">
             Placement Rep: Tino Britty J ·{' '}
             <a
               href={`https://github.com/${OWNER}/${REPO}`}
               target="_blank"
               rel="noreferrer"
-              className="text-gray-500 hover:text-gray-400 underline underline-offset-2"
+              className="text-slate-500 hover:text-slate-400 underline underline-offset-2"
             >
               GitHub Repository
             </a>
           </p>
-          <p className="mt-2 text-gray-700">Scores refresh every 60 seconds · No login required</p>
+          <p className="mt-2 text-slate-600">Scores refresh every 60 seconds · No login required</p>
         </footer>
+        </div>
       </body>
     </html>
   )

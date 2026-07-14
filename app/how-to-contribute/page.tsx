@@ -54,7 +54,7 @@ export default async function HowToContributePage() {
             <div className="flex items-center gap-2">
               <span className="text-gray-600">4.</span>
               <code className="bg-gray-800 text-gray-200 px-2 py-1 rounded flex-1">
-                git add . &amp;&amp; git commit -m &quot;day02: 25mx301 submission&quot;
+                git add . &amp;&amp; git commit -m &quot;2026-07-11: 25mx301 submission&quot;
               </code>
             </div>
             <div className="flex items-center gap-2">
@@ -114,7 +114,7 @@ export default async function HowToContributePage() {
 
               <h2 className="text-xl font-bold text-white">Step 4: Commit and push</h2>
               <pre className="bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm font-mono text-gray-200">
-                {`git add .\ngit commit -m "day02: 25mx301 submission"\ngit push origin main`}
+                {`git add .\ngit commit -m "2026-07-11: 25mx301 submission"\ngit push origin main`}
               </pre>
 
               <h2 className="text-xl font-bold text-white">Step 5: Open a Pull Request</h2>

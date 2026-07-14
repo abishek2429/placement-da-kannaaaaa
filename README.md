@@ -42,7 +42,7 @@ placement-readiness/
 ├── scoreboard.json               ← all scores (source of truth)
 ├── attendance.json               ← per-day attendance
 ├── teams.json                    ← team roster + rollups
-├── activities/day01..day05/      ← one folder per student per day
+├── activities/2026-07-10..2026-07-14/      ← one folder per student per day
 ├── scripts/                      ← Node scripts run by GitHub Actions
 ├── .github/workflows/            ← validate-pr.yml, on-merge.yml
 └── website/                      ← Next.js 14 app (deployed to Vercel)

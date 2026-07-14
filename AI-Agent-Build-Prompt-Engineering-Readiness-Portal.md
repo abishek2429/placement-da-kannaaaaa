@@ -30,7 +30,7 @@ A public, read-only "engineering readiness" proof-and-leaderboard portal for a c
 Create exactly this structure:
 
 ```
-engineering-readiness/
+placement-readiness/
 ├── README.md                      ← auto-generated leaderboard lives here (between markers)
 ├── HOW_TO_CONTRIBUTE.md           ← beginner-friendly Git/GitHub walkthrough (see §7)
 ├── scoreboard.json                ← source of truth for all scores
@@ -39,7 +39,7 @@ engineering-readiness/
 ├── students/
 │   └── roster.json                ← master list: rollnumber → name, github username, team
 ├── activities/
-│   ├── day01/
+│   ├── 2026-07-10/
 │   │   ├── _template/
 │   │   │   ├── README.md
 │   │   │   ├── reflection.md
@@ -48,7 +48,7 @@ engineering-readiness/
 │   │       ├── README.md
 │   │       ├── reflection.md
 │   │       └── prompts.md
-│   ├── day02/ ...
+│   ├── 2026-07-11/ ...
 │   └── ...
 ├── .github/
 │   └── workflows/
@@ -102,11 +102,11 @@ Students never touch `.github/`, `scripts/`, `website/`, or any other student's 
   "25mx301": {
     "total": 0,
     "byDay": {
-      "day01": { "submitted": 10, "quality": 0, "reflection": 0, "prompting": 0, "documentation": 0 },
-      "day02": { "submitted": 10, "quality": 8, "reflection": 9, "prompting": 7, "documentation": 5 }
+      "2026-07-10": { "submitted": 10, "quality": 0, "reflection": 0, "prompting": 0, "documentation": 0 },
+      "2026-07-11": { "submitted": 10, "quality": 8, "reflection": 9, "prompting": 7, "documentation": 5 }
     },
     "manualAdjustments": {
-      "reason": "network outage day03, verbal approval given",
+      "reason": "network outage 2026-07-12, verbal approval given",
       "points": 10,
       "addedBy": "owner",
       "date": "2026-07-16"
@@ -119,10 +119,10 @@ Students never touch `.github/`, `scripts/`, `website/`, or any other student's 
 ```json
 {
   "25mx301": {
-    "day01": "present",
-    "day02": "present",
-    "day03": "manual-present",
-    "day04": "absent"
+    "2026-07-10": "present",
+    "2026-07-11": "present",
+    "2026-07-12": "manual-present",
+    "2026-07-13": "absent"
   }
 }
 ```
@@ -190,10 +190,10 @@ Write this file in the repo, in plain language, containing:
 1. What forking means and why they're doing it (one paragraph, no jargon).
 2. Exact command sequence, copy-pasteable, for:
    - Forking via the GitHub UI (screenshotted description in words, since we can't embed real screenshots — describe exactly where to click).
-   - `git clone https://github.com/{their-username}/engineering-readiness.git`
-   - `cd engineering-readiness`
+   - `git clone https://github.com/{their-username}/placement-readiness.git`
+   - `cd placement-readiness`
    - Creating their day's files inside the correct folder.
-   - `git add . && git commit -m "day02: 25mx301 submission"`
+   - `git add . && git commit -m "2026-07-11: 25mx301 submission"`
    - `git push origin main`
    - Opening a PR from their fork back to the owner's repo via the GitHub UI, with the exact button sequence described.
 3. A short "if something goes wrong" section covering: merge conflicts, forgetting to fork before cloning, PR opened against the wrong branch, and "my push was rejected."
