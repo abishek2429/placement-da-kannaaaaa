@@ -55,7 +55,7 @@ export default async function HowToContributePage() {
             <div className="flex items-center gap-2">
               <span className="text-gray-600">4.</span>
               <code className="bg-gray-800 text-gray-200 px-2 py-1 rounded flex-1">
-                git add . && git commit -m "day02: 25mx301 submission"
+                git add . &amp;&amp; git commit -m &quot;day02: 25mx301 submission&quot;
               </code>
             </div>
             <div className="flex items-center gap-2">
